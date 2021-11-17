@@ -12,9 +12,9 @@ body {
 	margin-right: auto;
 	background-color: white;
 	border-radius: 2px;
-}	
+}
 
-#slideShow {	
+#slideShow {
 	position: relative;
 }
 
@@ -31,6 +31,7 @@ body {
 	z-index: 3;
 	opacity: .8;
 	top: 0px;
+	align-items: center; 
 }
 
 .thumbnail {
@@ -72,8 +73,6 @@ body {
 Make it animate nicely. You'll need CSS3 for this*/
 .rot90 {}
 
-/*Add CSS styles to rotate the element 180deg
-Make it animate nicely. You'll need CSS3 for this*/
 .rot180 {}
 
 /*Add CSS styles to rotate the element 270deg

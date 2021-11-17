@@ -36,7 +36,7 @@ function swapPhoto() {
 	if(mCurrentIndex >= mImgages.length){
     mCurrentIndex=0;
   }else if (mCurrentIndex<0){
-    mCurrentIndex=mImages[mImages.LNTH-1];
+    mCurrentIndex=mImages[mImages.length-1];
   }
 
   document.GetElementById('photo')
@@ -51,10 +51,10 @@ var mCurrentIndex = 0;
 // XMLHttpRequest variable
 var mRequest = new XMLHttpRequest();
 
-if request. addEventListener('readystatechange', () => {
 //console.log(request, request.readyState);
 if(request.readyState === 4 && request.status === 200){
 console.log(request,request.responseText);
+mJson=JSON.parse(request.responseText);
 } else if (request.readyState === 4) {
 console.log('could not fetch the data').
 });
@@ -66,7 +66,7 @@ var mImages = [];
 
 // Holds the retrived JSON information
 var mJson;
-JSON.stringify()
+
 
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
