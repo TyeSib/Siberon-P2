@@ -51,16 +51,18 @@ var mCurrentIndex = 0;
 // XMLHttpRequest variable
 var mRequest = new XMLHttpRequest();
 
-//console.log(request, request.readyState);
-if(request.readyState === 4 && request.status === 200){
-console.log(request,request.responseText);
-mJson=JSON.parse(request.responseText);
-} else if (request.readyState === 4) {
-console.log('could not fetch the data').
-});
+function fetchJSON() {
+	//console.log(request, request.readyState);
+	if(request.readyState === 4 && request.status === 200){
+	console.log(request,request.responseText);
+	mJson=JSON.parse(request.responseText);
+	} else if (request.readyState === 4) {
+	console.log('could not fetch the data').
+	});
 
-request.open ('GET','https://jsonplaceholder.typicode.com/todoss/');
-request.send();
+	request.open ('GET', mUrl, true);
+	request.send();
+
 // Array holding GalleryImage objects (see below).
 var mImages = [];
 
