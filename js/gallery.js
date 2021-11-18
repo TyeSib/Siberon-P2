@@ -36,14 +36,16 @@ function swapPhoto() {
 	if(mCurrentIndex >= mImgages.length){
     mCurrentIndex=0;
   }else if (mCurrentIndex<0){
-    mCurrentIndex=mImages[mImages.length-1];
+    mCurrentIndex=mImages.length-1;
   }
 
-  document.GetElementById('photo')
-document.GetElementById('photo')src="mImages"[mCurrentIndex].imgpath;
+document.getElementById('photo')src=mImages[mCurrentIndex].img;
 var location=document.getElementsByClassName('location')[0].innerHTML="location"+mImages[mCurrentIndex].location
 var description=document.GetElementsByClassName('description')[0].innerHTNL="Description:"+mImages[mCurrentIndex].description;
 var date=document.GetElementsByClassName('date')[0].innerHTML="Date:"+mImages[mCurrentIndex].date;
+
+}
+
 
 // Counter for the mImages array
 var mCurrentIndex = 0;
@@ -51,16 +53,20 @@ var mCurrentIndex = 0;
 // XMLHttpRequest variable
 var mRequest = new XMLHttpRequest();
 
-//console.log(request, request.readyState);
-if(request.readyState === 4 && request.status === 200){
-console.log(request,request.responseText);
-mJson=JSON.parse(request.responseText);
-} else if (request.readyState === 4) {
-console.log('could not fetch the data').
-});
+function fetchJSON() {
+	//console.log(request, request.readyState);
+	if(request.readyState === 4 && request.status === 200){
+	console.log(request,request.responseText);
+	mJson=JSON.parse(request.responseText);
+	} else if (request.readyState === 4) {
+	console.log('could not fetch the data').
+	});
 
-request.open ('GET','https://jsonplaceholder.typicode.com/todoss/');
-request.send();
+	request.open ('GET', mUrl, true);
+	request.send();
+
+}
+
 // Array holding GalleryImage objects (see below).
 var mImages = [];
 
@@ -70,7 +76,7 @@ var mJson;
 
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
-var mUrl = 'insert_url_here_to_image_json';
+var mUrl = '../images.json';
 
 
 //You can optionally use the following function as your event callback for loading the source of Images from your json data (for HTMLImageObject).
@@ -85,7 +91,7 @@ function makeGalleryImageOnloadCallback(galleryImage) {
 $(document).ready( function() {
 
 	// This initially hides the photos' metadata information
-	$('.details').eq(0).hide();
+	// $('.details').eq(0).hide();
 
 });
 
